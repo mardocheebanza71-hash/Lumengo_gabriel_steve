@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ParcoursRouteImport } from './routes/parcours'
+import { Route as PiliersRouteImport } from './routes/piliers'
+import { Route as ReflexionsRouteImport } from './routes/reflexions'
+import { Route as VisionRouteImport } from './routes/vision'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParcoursRoute = ParcoursRouteImport.update({
+  id: '/parcours',
+  path: '/parcours',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PiliersRoute = PiliersRouteImport.update({
+  id: '/piliers',
+  path: '/piliers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReflexionsRoute = ReflexionsRouteImport.update({
+  id: '/reflexions',
+  path: '/reflexions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisionRoute = VisionRouteImport.update({
+  id: '/vision',
+  path: '/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/contact': typeof ContactRoute
+  '/parcours': typeof ParcoursRoute
+  '/piliers': typeof PiliersRoute
+  '/reflexions': typeof ReflexionsRoute
+  '/vision': typeof VisionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/contact': typeof ContactRoute
+  '/parcours': typeof ParcoursRoute
+  '/piliers': typeof PiliersRoute
+  '/reflexions': typeof ReflexionsRoute
+  '/vision': typeof VisionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/contact': typeof ContactRoute
+  '/parcours': typeof ParcoursRoute
+  '/piliers': typeof PiliersRoute
+  '/reflexions': typeof ReflexionsRoute
+  '/vision': typeof VisionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/contact'
+    | '/parcours'
+    | '/piliers'
+    | '/reflexions'
+    | '/vision'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/contact'
+    | '/parcours'
+    | '/piliers'
+    | '/reflexions'
+    | '/vision'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-propos'
+    | '/contact'
+    | '/parcours'
+    | '/piliers'
+    | '/reflexions'
+    | '/vision'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
+  ContactRoute: typeof ContactRoute
+  ParcoursRoute: typeof ParcoursRoute
+  PiliersRoute: typeof PiliersRoute
+  ReflexionsRoute: typeof ReflexionsRoute
+  VisionRoute: typeof VisionRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parcours': {
+      id: '/parcours'
+      path: '/parcours'
+      fullPath: '/parcours'
+      preLoaderRoute: typeof ParcoursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/piliers': {
+      id: '/piliers'
+      path: '/piliers'
+      fullPath: '/piliers'
+      preLoaderRoute: typeof PiliersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reflexions': {
+      id: '/reflexions'
+      path: '/reflexions'
+      fullPath: '/reflexions'
+      preLoaderRoute: typeof ReflexionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision': {
+      id: '/vision'
+      path: '/vision'
+      fullPath: '/vision'
+      preLoaderRoute: typeof VisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
+  ContactRoute: ContactRoute,
+  ParcoursRoute: ParcoursRoute,
+  PiliersRoute: PiliersRoute,
+  ReflexionsRoute: ReflexionsRoute,
+  VisionRoute: VisionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

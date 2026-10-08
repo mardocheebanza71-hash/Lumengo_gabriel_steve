@@ -120,7 +120,7 @@ function Index() {
 
       <Section id="contact" index="07" label="SUIVRE MON PARCOURS" title="SUIVRE MON PARCOURS.">
         <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4">
-          <a href="https://wa.me/243824095627" className="link-underline text-sm text-gold">WhatsApp →</a>
+          <a href="https://wa.me/243997353027" className="link-underline text-sm text-gold">WhatsApp →</a>
           <a href="mailto:stevelumengo@gmail.com" className="link-underline text-sm text-gold">Email →</a>
           <a href="https://www.instagram.com/gabriel_steve_lumengo?stkn=ZGM3cTRkd3M4amxw" target="_blank" rel="noreferrer" className="link-underline text-sm text-gold">Instagram →</a>
           <a href="https://www.linkedin.com/in/gabriel-steve-lumengo-977952283?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="link-underline text-sm text-gold">LinkedIn →</a>
